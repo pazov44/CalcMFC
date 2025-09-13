@@ -460,7 +460,8 @@ void CCalcMFCDlg::OnBnClickedButton3()
 	// TODO: Add your control notification handler code here
 	CString expr;
 	m_EditInput.GetWindowTextA(expr);
-
+	
+	if(expr.IsEmpty()) return;
 	expr.Trim();
 
 	int len = expr.GetLength();
