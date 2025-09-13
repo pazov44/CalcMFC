@@ -363,14 +363,15 @@ void CCalcMFCDlg::AddNumber(char num)
 					{
 						int i = s.GetLength() - 1;
 						while (s[i] >= '0' && s[i] <= '9') i--;
+						bool isFract = s[i] == '.';
 						i++;
-						if (s[i] != '0')  // if first digit of last number isn't 0
+						if (s[i] != '0' || isFract)  // if first digit of last number isn't 0
 							s += num;
 					}
 				}
 				else
 				{
-					if ((last == num && s.FindOneOf("123456789") >= 0) || s.IsEmpty() || last != num) s += num;
+					if ((last == num && s.FindOneOf("123456789") >= 0) || s.IsEmpty() || last != num || s.Find('.') >=0) s += num;
 				}
 			}
 			else
