@@ -396,7 +396,7 @@ void CCalcMFCDlg::AddOperation(char op)
 
 		s.TrimRight();
 		char last = s.GetAt(s.GetLength() - 1);
-		if ((last >= '0' && last <= '9') || last == '%')
+		if ((last >= '0' && last <= '9') || last == '%' || last == '^')
 		{
 			s += ' ';
 			s += op;
